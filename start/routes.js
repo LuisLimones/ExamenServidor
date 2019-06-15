@@ -19,3 +19,12 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+//Rutas de Usuarios
+Route.post('/agregarUsuario', 'UsuarioController.store');
+
+//Rutas de Administrativo
+
+//Rutas de Taquilla
+
+//Ruta para llenar ASIENOS EN LUGAR DE SEED
+Route.get('/llenar', 'AsientoController.llenar')

@@ -12,6 +12,7 @@ class PeliculaSchema extends Schema {
       table.string('genero', 30).notNullable()
       table.integer('duracion').notNullable()
       table.integer('duracion_funcion').notNullable()
+      table.string('status', 10).notNullable()
     })
   }
 

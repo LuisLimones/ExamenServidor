@@ -8,7 +8,7 @@ class Usuario extends Model {
     static boot () {
         super.boot()
         this.addHook('beforeSave', async (usuarioInstance) => {
-          if (usuarioInstance.dirty.contra) {
+          if (usuarioInstance.contra) {
             usuarioInstance.contra = await Hash.make(usuarioInstance.contra)
           }
         })
