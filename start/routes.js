@@ -20,11 +20,24 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 //Rutas de Usuarios
-Route.post('/agregarUsuario', 'UsuarioController.store');
+Route.get('/usuarios/todos', 'UsuarioController.index')
+Route.get('/usuarios/:id', 'UsuarioController.show')
+Route.put('/usuarios/actualizar/:id', 'UsuarioController.update')
+Route.delete('/usuarios/eliminar/:id', 'UsuarioController.destroy')
+Route.post('/usuarios/agregarUsuario', 'UsuarioController.store')
+Route.post('/usuarios/login', 'UsuarioController.login')
+Route.post('/prueba', 'UsuarioController.pruebas')
 
 //Rutas de Administrativo
-
+//Peliculas
+Route.get('/adminsitrativo/peliculas/todos', 'AdministrativoController.obtenerPeliculas')
+Route.get('/administrativo/peliculas/:id', 'AdministrativoController.obtenerPelicula')
+Route.post('/administrativo/peliculas/nueva', 'AdministrativoController.nuevaPelicula')
+Route.put('/administrativo/peliculas/actualizar/:id', 'AdministrativoController.updatePelicula')
+//Salas
+Route.get('/administrativo/salas', 'AdministrativoController.obtenerSalas')
 //Rutas de Taquilla
 
-//Ruta para llenar ASIENOS EN LUGAR DE SEED
+//Rutas para llenar sala y asientos
 Route.get('/llenar', 'AsientoController.llenar')
+Route.get('llenarSalas', 'AsientoController.llenarSala')

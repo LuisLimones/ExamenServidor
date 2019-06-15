@@ -148,6 +148,16 @@ class UsuarioController {
       return response.json(error);
     }
   }
+
+  async rol({response, auth}){
+    const usuario=await auth.getUser();
+    return response.json(usuario.rol);
+  }
+
+  async pruebas({request, response, auth}){
+    const usuario=await auth.getUser();
+    return response.json(usuario.rol);
+  }
 }
 
 module.exports = UsuarioController

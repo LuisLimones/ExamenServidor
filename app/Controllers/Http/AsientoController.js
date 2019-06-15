@@ -1,5 +1,6 @@
 'use strict'
 const Asiento = use('App/Models/Asiento')
+const Sala = use('App/Models/Sala')
 
 class AsientoController {
     async llenar(response){
@@ -20,6 +21,19 @@ class AsientoController {
             }
         }
         return response.json({mensaje: "funciono"});
+    }
+    async llenarSala(){
+        try {
+            let num=1;
+            for (let index = 0; index < 10; index++) {
+                const sala=new Sala();
+                sala.numero=num;
+                await sala.save();
+                num++;
+            }
+        } catch (error) {
+            
+        }
     }
 }
 
