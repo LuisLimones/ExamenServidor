@@ -43,7 +43,7 @@ class AdministrativoController {
             console.log(params.id);
             let pelicula= await Pelicula.find(params.id);
             console.log(pelicula);
-            pelicula.titulo=input.get('titulo');
+            pelicula.titulo=request.input('titulo');
             pelicula.clasificacion=request.input('clasificacion');
             pelicula.genero=request.input('genero');
             pelicula.duracion=request.input('duracion');
