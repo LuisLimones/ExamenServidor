@@ -4,11 +4,14 @@
 const Model = use('Model')
 
 class Funcion extends Model {
+    static get table(){
+        return 'funciones';
+    }
     static get createdAtColumn(){
-        return null
+        return null;
     }
     static get updatedAtColumn(){
-        return null
+        return null;
     }
     pelicula(){
         return this.belongsTo('App/Models/Pelicula');
